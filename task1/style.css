@@ -9,11 +9,12 @@
     list-style: none;
     text-decoration: none;
     font-family: 'Poppins' sans-serif;
-    overflow-x: hidden;
+    border: none;
+    /* overflow-x: hidden; */
 }
 
 body{
-    background: #fff;
+    background-color: #FFF8DC !important;
 }
 
 .container{
@@ -82,13 +83,4 @@ i:hover{
     font-size: 24px;
 }
 
-
-.text{
-    /* text-align: center; */
-    /* border-radius: 50%;   */
-}
-
-.text:hover{
-    /* background: #edeef0;     */
-}
 

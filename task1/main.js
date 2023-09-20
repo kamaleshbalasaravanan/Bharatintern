@@ -69,6 +69,7 @@ listContainer.addEventListener("click", (e) => {
       if (inputField) {
         if (inputField.style.textDecoration === "line-through") {
           inputField.style.textDecoration = "none";
+          inputField.disabled = false
         } else {
           inputField.style.textDecoration = "line-through";
           inputField.disabled = true
