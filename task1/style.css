@@ -41,6 +41,18 @@ body{
 
 i{
     cursor: pointer;
+    /* width: 40px;
+    height: 40px; */
+    /* font-size: 22px;
+    height: 40px;
+    border: 1px solid;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%; */
+}
+
+i:hover{
+    background: #edeef0;   
 }
 
 .red-txt{
@@ -53,7 +65,7 @@ i{
     color: green;
 }
 
-.form-control.checked{
+.form-control.compelet{
     color: #555;
     text-decoration: line-through;
 }
@@ -69,3 +81,14 @@ i{
 .input-txt{
     font-size: 24px;
 }
+
+
+.text{
+    /* text-align: center; */
+    /* border-radius: 50%;   */
+}
+
+.text:hover{
+    /* background: #edeef0;     */
+}
+
