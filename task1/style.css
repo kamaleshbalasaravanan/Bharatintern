@@ -39,7 +39,9 @@ body{
     border: 1px solid red;
 }
 
-
+i{
+    cursor: pointer;
+}
 
 .red-txt{
     font-size: 20px;
