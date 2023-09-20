@@ -53,6 +53,11 @@ i{
     color: green;
 }
 
+.form-control.checked{
+    color: #555;
+    text-decoration: line-through;
+}
+
 .green{
     background-color: green !important;
 }
