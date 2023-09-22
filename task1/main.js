@@ -2,6 +2,23 @@ const input = document.getElementById("input-box");
 const listContainer = document.getElementById("list-container");
 const submitBtn = document.getElementById("submit-btn");
 
+const darkmode = document.getElementById('darkmode');
+let icon = document.getElementById('icon')
+
+
+darkmode.onclick = function () {
+  document.body.classList.toggle("dark-theme");
+
+  if (document.body.classList.contains("dark-theme")) {
+    localStorage.setItem("darkmode",`<span><i class="fa-solid fa-sun" style="color: #ababab;"></i></span>`)
+    darkmode.innerHTML = "Light theme"+ localStorage.getItem("darkmode");
+  } else {
+    localStorage.setItem("lightmode",`<span><i class="fas fa-moon" id="icon" style="color: #c7c7c7;"></i></span>`)
+    darkmode.innerHTML = "Dark theme"+ localStorage.getItem("lightmode");
+  }
+};
+
+
 const addTask = (e) => {
   e.preventDefault();
   console.log("successfully");

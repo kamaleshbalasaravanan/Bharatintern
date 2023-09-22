@@ -13,17 +13,41 @@
   </head>
   <body>
     <section class="heading" id="heading">
-      <div class="container-fluid mt-4">
+      <!-- <div class="container-fluid mt-4">
         <h1 class="text-center">Todo list</h1>
-      </div>
+      </div> -->
 
-      <div class="container-fluid m-auto">
-        <form class="row g-4 container-fluid mt-3">
+
+      <nav class="navbar fixed-top mb-5 bg-color">
+        <div class="container-fluid bg-color">
+          <a class="navbar-brand custom-color" href="#">Todo List</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon custom-icon-color"></span>
+          </button>
+          <div class="offcanvas offcanvas-end bg-color" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header bg-color">
+              <h5 class="offcanvas-title custom-color" id="offcanvasNavbarLabel">Todo List</h5>
+              <button type="button" class="btn-close bg-color" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" id="darkmode" href="#">Dark theme  <span><i class="fas fa-moon" id="icon" style="color: #c7c7c7;"></i></span> </a>
+                </li>
+              </ul>
+            
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container-fluid m-auto mt-5">
+        <form class="row g-4 container-fluid mt-5">
           <div class="col-11 m-auto">
-            <label for="validationDefault01" class="form-label font-weight-bold">Add Todo</label>
+            <label for="validationDefault01" class="form-label font-weight-bold mt-5 custom-color">Add Todo</label>
             <input
               type="text"
-              class="form-control p-3 custom-input"
+              class="form-control p-3 custom-input bg-color"
               id="input-box"
               placeholder="Add new todo"                                
               required
