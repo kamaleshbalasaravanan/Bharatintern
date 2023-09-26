@@ -2,22 +2,52 @@ const input = document.getElementById("input-box");
 const listContainer = document.getElementById("list-container");
 const submitBtn = document.getElementById("submit-btn");
 
-const darkmode = document.getElementById('darkmode');
-let icon = document.getElementById('icon')
+const darkmode = document.getElementById("darkmode");
+let icon = document.getElementById("icon");
+let mode
 
+// function mode () {
+//   document.body.classList.toggle("dark-theme");
+//   localStorage.setItem("mode",)
 
-darkmode.onclick = function () {
-  document.body.classList.toggle("dark-theme");
+//   if (document.body.classList.contains("dark-theme")) {
+//     localStorage.setItem("darkmode",`<span><i class="fa-solid fa-sun" style="color: #ababab;"></i></span>`)
+//     darkmode.innerHTML = "Light theme"+ localStorage.getItem("darkmode");
+//   } else {
+//     localStorage.setItem("lightmode",`<span><i class="fas fa-moon" id="icon" style="color: #c7c7c7;"></i></span>`)
+//     darkmode.innerHTML = "Dark theme"+ localStorage.getItem("lightmode");
+//   }
+// };
 
-  if (document.body.classList.contains("dark-theme")) {
-    localStorage.setItem("darkmode",`<span><i class="fa-solid fa-sun" style="color: #ababab;"></i></span>`)
-    darkmode.innerHTML = "Light theme"+ localStorage.getItem("darkmode");
-  } else {
-    localStorage.setItem("lightmode",`<span><i class="fas fa-moon" id="icon" style="color: #c7c7c7;"></i></span>`)
-    darkmode.innerHTML = "Dark theme"+ localStorage.getItem("lightmode");
+darkmode.addEventListener("click", (e) => {
+  console.log(e);
+  console.log(e.target.innerText);
+  // localStorage.setItem("mode","light-theme")
+  if (e.target.innerText === "Dark theme") {
+    mode = "dark-theme"
+    // document.body.classList.add("dark-theme")
+    // localStorage.setItem("current", "dark-theme");
+    e.target.innerHTML =
+      "Light theme" +
+      `<span><i class="fa-solid fa-sun" style="color: #ababab;"></i></span>`;
+  } else if (e.target.innerText === "Light theme") {
+    mode = "light-theme"
+    // document.body.classList.remove("dark-theme")
+    // localStorage.setItem("current", "light-theme");
+    e.target.innerHTML =
+      "Dark theme" +
+      `<span><i class="fas fa-moon" id="icon" style="color: #c7c7c7;"></i></span>`;
   }
-};
+  // document.body.classList.add(mode)
 
+  // let mode = localStorage.getItem("mode");
+  if (mode === "dark-theme") {
+    // document.body.classList.add(localStorage.getItem("current"));
+    document.body.classList.add("dark-theme");
+  } else {
+    document.body.classList.remove("dark-theme");
+  }
+});
 
 const addTask = (e) => {
   e.preventDefault();
@@ -53,7 +83,7 @@ const addTask = (e) => {
     listContainer.appendChild(li);
 
     input.value = "";
-    saveData()
+    saveData();
   }
 };
 
@@ -66,7 +96,6 @@ function createIconSpan(iconClass, textClass, textContent) {
 
   span.appendChild(i);
   return span;
-  
 }
 
 listContainer.addEventListener("click", (e) => {
@@ -77,32 +106,34 @@ listContainer.addEventListener("click", (e) => {
     }
   }
 
-  saveData()
+  saveData();
 });
 
 listContainer.addEventListener("click", (e) => {
-    if (e.target.classList.contains("complete")) {
-      const inputField = e.target.closest("li").querySelector("input");
-      if (inputField) {
-        if (inputField.style.textDecoration === "line-through") {
-          inputField.style.textDecoration = "none";
-          inputField.disabled = false
-        } else {
-          inputField.style.textDecoration = "line-through";
-          inputField.disabled = true
-        }
+  if (e.target.classList.contains("complete")) {
+    const inputField = e.target.closest("li").querySelector("input");
+    if (inputField) {
+      if (inputField.style.textDecoration === "line-through") {
+        inputField.style.textDecoration = "none";
+        inputField.disabled = false;
+      } else {
+        inputField.style.textDecoration = "line-through";
+        inputField.disabled = true;
       }
     }
-    saveData()
-  });
+  }
+  saveData();
+});
 
-function saveData(){
-    localStorage.setItem("data", listContainer.innerHTML)
+function saveData() {
+  localStorage.setItem("data", listContainer.innerHTML);
 }
 
-function showTask(){
-    listContainer.innerHTML = localStorage.getItem("data")
+function showTask() {
+  listContainer.innerHTML = localStorage.getItem("data");
 }
-showTask()
+showTask();
+// mode();
 
 submitBtn.addEventListener("click", addTask);
+// darkmode.addEventListener("click", mode);
