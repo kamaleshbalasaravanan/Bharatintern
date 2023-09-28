@@ -62,3 +62,27 @@ input::placeholder{
     font-size: 15px;
     text-align: center;
 }
+
+@media(max-width:500px) and (min-width:300px){
+    body{
+        width: 100%;
+    }
+    .container{
+        padding: 15px;
+    }
+
+    .heading{
+        font-size: 20px;
+    }
+
+    label{
+        font-size: 15px;
+    }
+
+    input{
+        width: 170px;
+        padding: 7px;
+        margin: 10px 0px;
+        font-size: 15px;
+    }
+}
