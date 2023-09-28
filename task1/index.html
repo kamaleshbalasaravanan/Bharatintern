@@ -13,17 +13,17 @@
         <div class="inputfield">
             <div class="temperature-wrapper">
                 <label>celsius:</label>
-                <input type="number" name="celsius" id="celsiusbox"
+                <input type="number" onchange="calculateTemp(event)" name="celsius" id="celsiusbox"
                     placeholder="enter temperature">
             </div>
             <div class="temperature-wrapper">
                 <label>fahrenheit:</label>
-                <input type="number" name="fahrenheit" id="fahrenheitbox"
+                <input type="number" onchange="calculateTemp(event)" name="fahrenheit" id="fahrenheitbox"
                     placeholder="enter temperature">
             </div>
             <div class="temperature-wrapper">
                 <label>kelvin:</label>
-                <input type="number" name="kelvin" id="kelvinbox"
+                <input type="number" onchange="calculateTemp(event)" name="kelvin" id="kelvinbox"
                     placeholder="enter temperature">
             </div>
         </div>
